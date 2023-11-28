@@ -21,7 +21,17 @@ function operate(){ //need checking
     nextVal = prompt('Enter next value:');
     let result;
     if(mathOperator == '+'){
-        result = addition(initialVal,nextVal); //need checking
+        result = addition(initialVal,nextVal);
     }
+    else if (mathOperator == '-'){
+        result = subtraction(initialVal,nextVal);
+    }
+    else if (mathOperator == '*'){
+        result = multiplication(initialVal,nextVal);
+    }
+    else if (mathOperator == '/'){
+        result = division(initialVal,nextVal);
+    }
+    
     return result;
 }
