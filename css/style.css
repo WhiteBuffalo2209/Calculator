@@ -2,6 +2,10 @@ h1{
     color: red;
 
 }
+.page-middle{
+    display: flex;
+    justify-content: center;
+}
 .calculator-body{
     width: 235px;
     height: 370px;
