@@ -8,7 +8,7 @@ h1{
 }
 .calculator-body{
     width: 235px;
-    height: 370px;
+    height: 340px;
     border: 2px solid blue;
 }
 .calculator-body-upper{
@@ -28,7 +28,7 @@ h1{
     height: 50px;
     border: 1px solid green;
 }
-.item-right,.minus{
+.item-right,.item-minus{
     width: 50px;
     height: 50px;
     border: 1px solid red;
@@ -36,13 +36,14 @@ h1{
 .calculator-section-left{
     border: 1px solid palevioletred;
 }
-.add,.equals{
+.item-left{
     width: 50px;
     height: 100px;
     border: 1px solid turquoise;
 }
-.item-right,.item-dot,.calculator-body-upper{
+.calculator-body-upper,.item-right,.item-dot,.item-minus,.item-left{
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
