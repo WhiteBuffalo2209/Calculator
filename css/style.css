@@ -1,17 +1,21 @@
 h1{
     color: red;
+
 }
 .calculator-body{
     width: 235px;
     height: 370px;
     border: 2px solid blue;
 }
-.calculator-body-lower{
-    display: flex;
-}
-.display{
+.calculator-body-upper{
     border: 1px solid green;
     height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calculator-body-lower{
+    display: flex;
 }
 .calculator-section-right{
     border: 1px solid orange;
@@ -22,6 +26,8 @@ h1{
     width: 100px;
     height: 50px;
     border: 1px solid green;
+    display: flex;
+    align-content: center;
 }
 .calculator-section-right div{
     width: 50px;
