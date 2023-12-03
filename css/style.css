@@ -14,9 +14,6 @@ h1{
 .calculator-body-upper{
     border: 1px solid green;
     height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .calculator-body-lower{
     display: flex;
@@ -26,14 +23,12 @@ h1{
     display: flex;
     flex-wrap: wrap;
 }
-.calculator-section-right .dot{
+.item-dot{
     width: 100px;
     height: 50px;
     border: 1px solid green;
-    display: flex;
-    align-content: center;
 }
-.calculator-section-right div{
+.item-right,.minus{
     width: 50px;
     height: 50px;
     border: 1px solid red;
@@ -41,18 +36,13 @@ h1{
 .calculator-section-left{
     border: 1px solid palevioletred;
 }
-.calculator-section-left .minus{
-    width: 50px;
-    height: 50px;
-    border: 1px solid turquoise;
-}
-.calculator-section-left .add{
+.add,.equals{
     width: 50px;
     height: 100px;
     border: 1px solid turquoise;
 }
-.calculator-section-left .equals{
-    width: 50px;
-    height: 100px;
-    border: 1px solid turquoise;
+.item-right,.item-dot,.calculator-body-upper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
