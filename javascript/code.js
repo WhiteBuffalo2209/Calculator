@@ -32,6 +32,11 @@ function operate(){ //need checking
     else if (mathOperator == '/'){
         result = division(initialVal,nextVal);
     }
-    
     return result;
 }
+
+function testFunction() {   //need checking
+    console.log('hello');
+}
+const clearButton = document.querySelector('.clear');
+clearButton.addEventListener('click',testFunction);
