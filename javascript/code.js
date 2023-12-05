@@ -35,8 +35,10 @@ function operate(){ //need checking
     return result;
 }
 
-function testFunction() {   //need checking
-    console.log('hello');
+function testFunction(e) {   //need checking
+    console.log(e.srcElement.childNodes[0].data);
 }
-const clearButton = document.querySelector('.clear');
-clearButton.addEventListener('click',testFunction);
+const buttons = document.querySelectorAll('.item-right');
+buttons.forEach(button => button.addEventListener('click',testFunction));
+
+//e.srcElement.childNodes[0].data
