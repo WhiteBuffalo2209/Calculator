@@ -38,7 +38,7 @@ function operate(){ //need checking
 function testFunction(e) {   //need checking
     console.log(e.srcElement.childNodes[0].data);
 }
-const buttons = document.querySelectorAll('.item-right');
+const buttons = document.querySelectorAll('.button');
 buttons.forEach(button => button.addEventListener('click',testFunction));
 
 //e.srcElement.childNodes[0].data

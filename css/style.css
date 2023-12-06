@@ -28,7 +28,7 @@ h1{
     height: 50px;
     border: 1px solid green;
 }
-.item-right,.item-minus{
+.button,.minus{
     width: 50px;
     height: 50px;
     border: 1px solid red;
@@ -36,12 +36,12 @@ h1{
 .calculator-section-left{
     border: 1px solid palevioletred;
 }
-.item-left{
+.add,.equals{
     width: 50px;
     height: 100px;
     border: 1px solid turquoise;
 }
-.calculator-body-upper,.item-right,.item-minus,.item-left{
+.calculator-body-upper,.button{
     display: flex;
     align-items: center;
     justify-content: center;
