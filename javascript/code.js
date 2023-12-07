@@ -1,7 +1,9 @@
 
-let initialVal;
+let storageVal = '';
+let initalVal;
 let nextVal;
 let mathOperator;
+let buttonClicked;
 
 function addition(a,b){
     return +a + +b;
@@ -29,14 +31,26 @@ function operate(){ //need checking
     else if (mathOperator == '*'){
         result = multiplication(initialVal,nextVal);
     }
-    else if (mathOperator == '/'){
+    else if (mathOperator == '÷'){
         result = division(initialVal,nextVal);
     }
     return result;
 }
 
 function testFunction(e) {   //need checking
+    let array = [];
     console.log(e.srcElement.childNodes[0].data);
+    buttonClicked = e.srcElement.childNodes[0].data;
+    if(buttonClicked === '+'){ //not working
+        array.push(storageVal);
+        array.push(buttonClicked);
+        storageVal = '';
+        console.log(array);
+    }
+    else{
+        storageVal += buttonClicked;
+    }
+    
 }
 const buttons = document.querySelectorAll('.button');
 buttons.forEach(button => button.addEventListener('click',testFunction));
