@@ -1,9 +1,12 @@
 
 let storageVal = '';
+let buttonClicked;
+let buttonArray = [];
+
 let initalVal;
 let nextVal;
 let mathOperator;
-let buttonClicked;
+
 
 function addition(a,b){
     return +a + +b;
@@ -37,15 +40,18 @@ function operate(){ //need checking
     return result;
 }
 
-function testFunction(e) {   //need checking
-    let array = [];
+function testFunction(e) {
     console.log(e.srcElement.childNodes[0].data);
     buttonClicked = e.srcElement.childNodes[0].data;
-    if(buttonClicked === '+'){ //not working
-        array.push(storageVal);
-        array.push(buttonClicked);
+    if(buttonClicked === '+'){
+        buttonArray.push(storageVal);
+        buttonArray.push(buttonClicked);
         storageVal = '';
-        console.log(array);
+        console.log(buttonArray);
+    }
+    else if (buttonClicked === 'Equals'){
+        buttonArray.push(storageVal);
+        console.log(buttonClicked);   // already have arrays with add operators and values
     }
     else{
         storageVal += buttonClicked;
