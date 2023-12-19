@@ -41,9 +41,9 @@ function operate(){ //need checking
 }
 
 function testFunction(e) {
-    console.log(e.srcElement.childNodes[0].data);
     buttonClicked = e.srcElement.childNodes[0].data;
-    if(buttonClicked === '+'){
+    console.log(buttonClicked);
+    if(buttonClicked === '+' || buttonClicked === '-' || buttonClicked === '*' || buttonClicked === '÷'){
         buttonArray.push(storageVal);
         buttonArray.push(buttonClicked);
         storageVal = '';
@@ -51,7 +51,43 @@ function testFunction(e) {
     }
     else if (buttonClicked === 'Equals'){
         buttonArray.push(storageVal);
-        console.log(buttonClicked);   // already have arrays with add operators and values
+        console.log(buttonClicked);
+        console.log(buttonArray);
+        let initial;
+        let next;
+        let result;
+        for(i=0;i<buttonArray.length-1;i++){   //need to make new function, too long
+            if(buttonArray[i] === '+'){
+                if(i>=3){
+                    initial = result;
+                    next = buttonArray[i+1];
+                    result = addition(initial,next);
+                    console.log(`next ${next} initial ${initial} answer ${result}`); 
+                }
+                else{
+                    initial = buttonArray[i-1];
+                    next = buttonArray[i+1];
+                    result = addition(initial,next);
+                    console.log(`next ${next} initial ${initial} answer ${result}`); 
+                }
+                
+            }
+            else if(buttonArray[i] === '-'){
+                if(i>=3){
+                    initial = result;
+                    next = buttonArray[i+1];
+                    result = subtraction(initial,next);
+                    console.log(`next ${next} initial ${initial} answer ${result}`); 
+                }
+                else{
+                    initial = buttonArray[i-1];
+                    next = buttonArray[i+1];
+                    result = subtraction(initial,next);
+                    console.log(`next ${next} initial ${initial} answer ${result}`); 
+                }
+            }
+            
+        }
     }
     else{
         storageVal += buttonClicked;
