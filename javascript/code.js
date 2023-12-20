@@ -48,7 +48,7 @@ function operate(){
     }
 }
 
-function testFunction(e) {
+function initiateCalculator(e) {
     buttonClicked = e.srcElement.childNodes[0].data;
     console.log(buttonClicked);
     if(buttonClicked === '+' || buttonClicked === '-' || buttonClicked === '*' || buttonClicked === '÷'){
@@ -71,6 +71,6 @@ function testFunction(e) {
     }
 }
 const buttons = document.querySelectorAll('.button');
-buttons.forEach(button => button.addEventListener('click',testFunction));
+buttons.forEach(button => button.addEventListener('click',initiateCalculator));
 
 //e.srcElement.childNodes[0].data
