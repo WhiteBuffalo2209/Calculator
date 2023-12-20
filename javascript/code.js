@@ -3,9 +3,7 @@ let storageVal = '';
 let buttonClicked;
 let buttonArray = [];
 
-let initalVal;
-let nextVal;
-let mathOperator;
+
 
 
 function addition(a,b){
@@ -21,9 +19,6 @@ function division(a,b){
     return +a / +b;
 }
 function operate(){ //need checking
-    initialVal = prompt('Enter inital value:');
-    mathOperator = prompt('Enter math operator:');
-    nextVal = prompt('Enter next value:');
     let result;
     if(mathOperator == '+'){
         result = addition(initialVal,nextVal);
@@ -57,7 +52,7 @@ function testFunction(e) {
         let next;
         let result;
         for(i=0;i<buttonArray.length-1;i++){   //need to make new function, too long
-            if(buttonArray[i] === '+'){
+            if(buttonArray[i] === '+'){         //need to add multiplication and also divison
                 if(i>=3){
                     initial = result;
                     next = buttonArray[i+1];
@@ -70,7 +65,6 @@ function testFunction(e) {
                     result = addition(initial,next);
                     console.log(`next ${next} initial ${initial} answer ${result}`); 
                 }
-                
             }
             else if(buttonArray[i] === '-'){
                 if(i>=3){
