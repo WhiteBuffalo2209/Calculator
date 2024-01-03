@@ -19,6 +19,16 @@ function multiplication(a,b){
 function division(a,b){
     return +a / +b;
 }
+
+function decimalChecker(value){
+    if (value === Math.floor(value)){
+        return value;
+    }
+    else {
+        return value.toFixed(2);
+    }
+}
+
 function operate(){
     for(i=0;i<buttonArray.length-1;i++){   //need to make this shorter code
         if(buttonArray[i] === '+'){        
@@ -27,14 +37,14 @@ function operate(){
                 next = buttonArray[i+1];
                 result = addition(initial,next);
                 console.log(`next ${next} initial ${initial} answer ${result}`); 
-                display.textContent = result;
+                display.textContent = decimalChecker(result);
             }
             else{
                 initial = buttonArray[i-1];
                 next = buttonArray[i+1];
                 result = addition(initial,next);
                 console.log(`next ${next} initial ${initial} answer ${result}`); 
-                display.textContent = result;
+                display.textContent = decimalChecker(result);
             }
         }
         else if(buttonArray[i] === '-'){
@@ -43,14 +53,14 @@ function operate(){
                 next = buttonArray[i+1];
                 result = subtraction(initial,next);
                 console.log(`next ${next} initial ${initial} answer ${result}`);
-                display.textContent = result;
+                display.textContent = decimalChecker(result);
             }
             else{
                 initial = buttonArray[i-1];
                 next = buttonArray[i+1];
                 result = subtraction(initial,next);
                 console.log(`next ${next} initial ${initial} answer ${result}`);
-                display.textContent = result;
+                display.textContent = decimalChecker(result);
             }
         }
         else if(buttonArray[i] === '*'){
@@ -59,14 +69,14 @@ function operate(){
                 next = buttonArray[i+1];
                 result = multiplication(initial,next);
                 console.log(`next ${next} initial ${initial} answer ${result}`);
-                display.textContent = result;
+                display.textContent = decimalChecker(result);
             }
             else{
                 initial = buttonArray[i-1];
                 next = buttonArray[i+1];
                 result = multiplication(initial,next);
                 console.log(`next ${next} initial ${initial} answer ${result}`);
-                display.textContent = result;
+                display.textContent = decimalChecker(result);
             }
         }
         else if(buttonArray[i] === '÷'){
@@ -75,14 +85,14 @@ function operate(){
                 next = buttonArray[i+1];
                 result = division(initial,next);
                 console.log(`next ${next} initial ${initial} answer ${result}`);
-                display.textContent = result;
+                display.textContent = decimalChecker(result);
             }
             else{
                 initial = buttonArray[i-1];
                 next = buttonArray[i+1];
                 result = division(initial,next);
                 console.log(`next ${next} initial ${initial} answer ${result}`);
-                display.textContent = result;
+                display.textContent = decimalChecker(result);
             }
         }
     }
@@ -101,9 +111,7 @@ function initiateCalculator(e) {
     else if (buttonClicked === 'Equals'){
         buttonArray.push(storageVal);
         console.log(buttonArray);
-
         operate();
-        
     }
     else{
         storageVal += buttonClicked;
