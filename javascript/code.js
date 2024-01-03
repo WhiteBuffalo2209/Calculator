@@ -108,7 +108,7 @@ function initiateCalculator(e) {
         storageVal = '';
         console.log(buttonArray);
     }
-    else if (buttonClicked === 'Equals'){   //need to fix error when equals is clicked first
+    else if (buttonClicked === 'Equals'){
         if (storageVal === ''){
             display.textContent = 0;
         }
@@ -117,6 +117,11 @@ function initiateCalculator(e) {
             console.log(buttonArray);
             operate();
         }
+    }
+    else if (buttonClicked === 'Clear'){
+        buttonArray = [];
+        storageVal = '';
+        display.textContent = 0;
     }
     else{
         storageVal += buttonClicked;
