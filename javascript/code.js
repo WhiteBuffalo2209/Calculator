@@ -108,10 +108,15 @@ function initiateCalculator(e) {
         storageVal = '';
         console.log(buttonArray);
     }
-    else if (buttonClicked === 'Equals'){
-        buttonArray.push(storageVal);
-        console.log(buttonArray);
-        operate();
+    else if (buttonClicked === 'Equals'){   //need to fix error when equals is clicked first
+        if (storageVal === ''){
+            display.textContent = 0;
+        }
+        else{
+            buttonArray.push(storageVal);
+            console.log(buttonArray);
+            operate();
+        }
     }
     else{
         storageVal += buttonClicked;
