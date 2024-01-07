@@ -116,6 +116,8 @@ function initiateCalculator(e) {
             buttonArray.push(storageVal);
             console.log(buttonArray);
             operate();
+            buttonArray = [];
+            storageVal = '';
         }
     }
     else if (buttonClicked === 'Clear'){
@@ -124,9 +126,17 @@ function initiateCalculator(e) {
         display.textContent = 0;
     }
     else{
-        storageVal += buttonClicked;
+        doubleDotInputChecker();
+        storageVal += buttonClicked;    // need to check double dot input
     }
 }
+
+function doubleDotInputChecker(){
+    if (storageVal.includes('.') && buttonClicked === '.'){     // need to check double dot input
+        buttonClicked = '';
+    }
+}
+
 const buttons = document.querySelectorAll('.button');
 buttons.forEach(button => button.addEventListener('click',initiateCalculator));
 
