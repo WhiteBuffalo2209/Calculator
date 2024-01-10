@@ -2,6 +2,7 @@
 let storageVal = '';
 let buttonClicked;
 let buttonArray = [];
+let keyClicked;
 
 let initial;
 let next;
@@ -26,6 +27,12 @@ function decimalChecker(value){
     }
     else {
         return value.toFixed(2);
+    }
+}
+
+function doubleDotInputChecker(){
+    if (storageVal.includes('.') && buttonClicked === '.'){
+        buttonClicked = '';
     }
 }
 
@@ -127,13 +134,7 @@ function initiateCalculator(e) {
     }
     else{
         doubleDotInputChecker();
-        storageVal += buttonClicked;    // need to check double dot input
-    }
-}
-
-function doubleDotInputChecker(){
-    if (storageVal.includes('.') && buttonClicked === '.'){     // need to check double dot input
-        buttonClicked = '';
+        storageVal += buttonClicked;
     }
 }
 
@@ -142,8 +143,38 @@ buttons.forEach(button => button.addEventListener('click',initiateCalculator));
 
 const display = document.querySelector('.display');
 
+window.addEventListener('keyup', inputKeyboard);
 
-//e.srcElement.childNodes[0].data
-// decimal checker 12.3.56.5
-//Add a “backspace” button, so the user can undo if they click the wrong number.
-//Add keyboard support! 
+function inputKeyboard(e){
+    keyClicked = e.key;
+    console.log('This key was clicked: ',keyClicked);
+    display.textContent = keyClicked; //need to disable alphabet
+    if(keyClicked === '+' || keyClicked === '-' || keyClicked === '*' || keyClicked === '÷'){
+        buttonArray.push(storageVal);
+        buttonArray.push(keyClicked);
+        storageVal = '';
+        console.log(buttonArray);
+    }
+    else if (keyClicked === 'Enter'){
+        if (storageVal === ''){
+            display.textContent = 0;
+        }
+        else{
+            buttonArray.push(storageVal);
+            console.log(buttonArray);
+            operate();
+            buttonArray = [];
+            storageVal = '';
+        }
+    }
+    else if (keyClicked === 'NumLock'){
+        buttonArray = [];
+        storageVal = '';
+        display.textContent = 0;
+    }
+    else{
+        doubleDotInputChecker();
+        storageVal += keyClicked;
+    }
+} 
+
