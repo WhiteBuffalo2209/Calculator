@@ -34,6 +34,9 @@ function doubleDotInputChecker(){
     if (storageVal.includes('.') && buttonClicked === '.'){
         buttonClicked = '';
     }
+    else if (storageVal.includes('.') && keyClicked === '.'){
+        keyClicked = '';
+    }
 }
 
 function operate(){
@@ -138,13 +141,6 @@ function initiateCalculator(e) {
     }
 }
 
-const buttons = document.querySelectorAll('.button');
-buttons.forEach(button => button.addEventListener('click',initiateCalculator));
-
-const display = document.querySelector('.display');
-
-window.addEventListener('keyup', inputKeyboard);
-
 function inputKeyboard(e){
     keyClicked = e.key;
     console.log('This key was clicked: ',keyClicked);
@@ -178,3 +174,9 @@ function inputKeyboard(e){
     }
 } 
 
+const buttons = document.querySelectorAll('.button');
+buttons.forEach(button => button.addEventListener('click',initiateCalculator));
+
+const display = document.querySelector('.display');
+
+window.addEventListener('keyup', inputKeyboard);
