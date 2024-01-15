@@ -40,7 +40,7 @@ function doubleDotInputChecker(){
 }
 
 function operate(){
-    for(i=0;i<buttonArray.length-1;i++){   //need to make this shorter code
+    for(i=0;i<buttonArray.length-1;i++){
         if(buttonArray[i] === '+'){        
             if(i>=3){
                 initial = result;
@@ -141,10 +141,18 @@ function initiateCalculator(e) {
     }
 }
 
+function disableNonMathKeys(val){
+    let array = ['NumLock','/','*','-','+','Enter','.','0','1','2','3','4','5','6','7','8','9'];
+    if (!(array.includes(val))){
+        keyClicked = '';
+    }
+}
+
 function inputKeyboard(e){
     keyClicked = e.key;
-    console.log('This key was clicked: ',keyClicked);
-    display.textContent = keyClicked; //need to disable alphabet
+    console.log('This key was pressed: ',keyClicked);
+    disableNonMathKeys(keyClicked);
+    display.textContent = keyClicked;
     if(keyClicked === '+' || keyClicked === '-' || keyClicked === '*' || keyClicked === '÷'){
         buttonArray.push(storageVal);
         buttonArray.push(keyClicked);
