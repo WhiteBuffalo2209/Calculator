@@ -1,5 +1,9 @@
+html{
+    background-image: url(../images/winnie-mouse-background.jpg);
+    background-size: cover;
+}
 h1{
-    color: red;
+    color: yellow;
 }
 .page-middle{
     display: flex;
@@ -8,7 +12,7 @@ h1{
 .calculator-body{
     width: 235px;
     height: 340px;
-    border: 15px solid blue;
+    border: 15px solid black;
     padding: 10px;
 }
 .calculator-body-upper{
