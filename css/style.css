@@ -1,6 +1,5 @@
 h1{
     color: red;
-
 }
 .page-middle{
     display: flex;
@@ -9,7 +8,7 @@ h1{
 .calculator-body{
     width: 235px;
     height: 340px;
-    border: 2px solid blue;
+    border: 15px solid blue;
     padding: 10px;
 }
 .calculator-body-upper{
@@ -44,7 +43,7 @@ h1{
     height: 102px;
     border: 1px solid turquoise;
 }
-.calculator-body-upper,.button{
+h1,.calculator-body-upper,.button{
     display: flex;
     align-items: center;
     justify-content: center;
