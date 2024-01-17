@@ -16,6 +16,8 @@ h1{
     padding: 10px;
 }
 .calculator-body-upper{
+    color: yellow;
+    background-color: black;
     border: 1px solid green;
     height: 50px;
 }
@@ -38,6 +40,9 @@ h1{
     height: 50px;
     border: 1px solid red;
 }
+.button:hover{
+    background-color: yellow;
+}
 .calculator-section-left{
     border: 1px solid palevioletred;
     padding: 5px;
@@ -52,4 +57,5 @@ h1,.calculator-body-upper,.button{
     align-items: center;
     justify-content: center;
 }
+
 

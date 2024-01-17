@@ -180,10 +180,16 @@ function inputKeyboard(e){
         doubleDotInputChecker();
         storageVal += keyClicked;
     }
-} 
+}
+
+function buttonChangeColor(){
+    console.log('hover hover');
+}
 
 const buttons = document.querySelectorAll('.button');
 buttons.forEach(button => button.addEventListener('click',initiateCalculator));
+//buttons.forEach(button => button.addEventListener('hover',buttonChangeColor));
+
 
 const display = document.querySelector('.display');
 
