@@ -138,6 +138,7 @@ function initiateCalculator(e) {
     else{
         doubleDotInputChecker();
         storageVal += buttonClicked;
+        display.textContent = storageVal;
     }
 }
 
@@ -179,6 +180,7 @@ function inputKeyboard(e){
     else{
         doubleDotInputChecker();
         storageVal += keyClicked;
+        display.textContent = storageVal;
     }
 }
 
