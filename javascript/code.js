@@ -89,7 +89,7 @@ function operate(){
                 display.textContent = decimalChecker(result);
             }
         }
-        else if(buttonArray[i] === '÷'){
+        else if(buttonArray[i] === '÷' || buttonArray[i] === '/'){
             if(i>=3){
                 initial = result;
                 next = buttonArray[i+1];
