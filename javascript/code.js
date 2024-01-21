@@ -154,7 +154,7 @@ function inputKeyboard(e){
     console.log('This key was pressed: ',keyClicked);
     disableNonMathKeys(keyClicked);
     display.textContent = keyClicked;
-    if(keyClicked === '+' || keyClicked === '-' || keyClicked === '*' || keyClicked === '÷'){
+    if(keyClicked === '+' || keyClicked === '-' || keyClicked === '*' || keyClicked === '/'){
         buttonArray.push(storageVal);
         buttonArray.push(keyClicked);
         storageVal = '';
